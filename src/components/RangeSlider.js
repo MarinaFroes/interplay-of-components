@@ -74,7 +74,9 @@ export default function RangeSlider() {
         onChange={handleChange}
         valueLabelDisplay="on"
         marks={true}
-        step={10}
+        step={1}
+        max={6}
+        min={0}
       />
     </div>
   );
