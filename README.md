@@ -1,6 +1,6 @@
 # Interplay of components and state management
 
-![]('./src/images/ScreenShot.png')
+![screenshot](./src/images/ScreenShot.png)
 
 ## Introduction
 
@@ -22,7 +22,7 @@ $ npm start
 ## References
 
 ### Tutorials
--[Redux Crash Course With React](https://www.youtube.com/watch?v=93p3LxR9xfM) by Traversy Media.
+- [Redux Crash Course With React](https://www.youtube.com/watch?v=93p3LxR9xfM) by Traversy Media.
 
 ### Articles 
 - [Replacing Component Lifecycles with the useEffect Hook, in React](https://alligator.io/react/replacing-component-lifecycles-with-useeffect/)
