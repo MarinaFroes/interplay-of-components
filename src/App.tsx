@@ -19,7 +19,7 @@ const BarContainer = styled.div`
 const initialData = [84, 14, 234, 37, 64, 42, 197, 11];
 initialData.sort((a, b) => b - a);
 
-const initialDataObject: object = {};
+const initialDataObject: any = {};
 
 let sliderKeys: string[];
 
@@ -42,7 +42,7 @@ function App() {
     let newData: number[] = initialData.slice(newValue[0] - 1, newValue[1]);
     console.log(`new data: ${newData}`);
 
-    const newObject: object = {};
+    const newObject: any = {};
 
     for (let i = 0; i < initialData.length; i++) {
       if (newData.includes(initialData[i])) {
@@ -56,7 +56,7 @@ function App() {
     setDataObject(newObject);
   }
 
-  const handleChange = (event: React.ChangeEvent<{}>, newValue: number[]): void => {
+  const handleChange = (event: any, newValue: any) => {
     setSliderValue(newValue);
     console.log(event);
     console.log(`value: ${newValue}`);

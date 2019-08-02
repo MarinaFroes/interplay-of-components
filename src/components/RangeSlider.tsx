@@ -56,7 +56,7 @@ function ActivitySliderThumbComponent(props: any) {
 
 interface SliderProps {
   values: number[];
-  onChange: (event: React.ChangeEvent<{}>, newValue: number[]) => void;
+  onChange: any;
   max: number;
 }
 
@@ -79,22 +79,5 @@ function RangeSlider(props: SliderProps) {
     </div>
   );
 }
-
-// RangeSlider.propTypes = {
-//   ThumbComponent: PropTypes.func.isRequired,
-//   defaultValue: PropTypes.array.isRequired,
-//   onChange: PropTypes.func.isRequired,
-//   valueLabelDisplay: PropTypes.string,
-//   marks: PropTypes.bool,
-//   max: PropTypes.number,
-//   min: PropTypes.number
-// }
-
-// interface ActivityProps {
-//     first_name: string;
-//     last_name: string;
-//     age: number;
-//     agreetoterms?: boolean;
-// }
 
 export default RangeSlider;
