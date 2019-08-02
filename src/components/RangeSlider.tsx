@@ -53,24 +53,20 @@ function ActivitySliderThumbComponent(props: any) {
     <span {...props} />
   );
 }
-/*
-interface Props {
-  children: React.ReactElement;
-  open: boolean;
-  value: number;
-}
 
-function ValueLabelComponent(props: Props) {
-  const { children, open, value } = props;
-*/
-
-interface Props {
-  values: array;
-  onChange: function;
+interface SliderProps {
+  values: number[];
+  onChange: (event: React.ChangeEvent<{}>, newValue: number[]) => void;
   max: number;
 }
 
-function RangeSlider(props: Props) {
+/*
+onChange = (e: React.ChangeEvent<HTMLInputElement>)=> {
+   const newValue = e.target.value;
+}
+ */
+
+function RangeSlider(props: SliderProps) {
   const { values, onChange, max } = props;
   const classes = useStyles();
 
