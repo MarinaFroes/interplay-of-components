@@ -40,8 +40,7 @@ function App() {
 
   const getData = (initialData: number[], newValue: number[]): void => {
     let newData: number[] = initialData.slice(newValue[0] - 1, newValue[1]);
-    console.log(`new data: ${newData}`);
-
+    
     const newObject: any = {};
 
     for (let i = 0; i < initialData.length; i++) {
@@ -52,14 +51,12 @@ function App() {
         newObject[`activity ${i + 1}`] = 0;
       }
     }
-    console.log(newObject);
+
     setDataObject(newObject);
   }
 
   const handleChange = (event: any, newValue: any) => {
     setSliderValue(newValue);
-    console.log(event);
-    console.log(`value: ${newValue}`);
   };
   
   return (
