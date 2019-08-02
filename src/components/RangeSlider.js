@@ -55,7 +55,7 @@ function ActivitySliderThumbComponent(props) {
   );
 }
 
-function RangeSlider({ values, onChange}) {
+function RangeSlider({ values, onChange, max}) {
   const classes = useStyles();
 
   return (
@@ -67,8 +67,7 @@ function RangeSlider({ values, onChange}) {
         onChange={onChange}
         valueLabelDisplay="on"
         marks={true}
-        step={1}
-        max={6}
+        max={max}
         min={1}
       />
     </div>
@@ -81,7 +80,6 @@ RangeSlider.propTypes = {
   onChange: PropTypes.func.isRequired,
   valueLabelDisplay: PropTypes.string,
   marks: PropTypes.bool,
-  step: PropTypes.number,
   max: PropTypes.number,
   min: PropTypes.number
 }
