@@ -60,12 +60,6 @@ interface SliderProps {
   max: number;
 }
 
-/*
-onChange = (e: React.ChangeEvent<HTMLInputElement>)=> {
-   const newValue = e.target.value;
-}
- */
-
 function RangeSlider(props: SliderProps) {
   const { values, onChange, max } = props;
   const classes = useStyles();
