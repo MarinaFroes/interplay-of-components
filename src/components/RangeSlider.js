@@ -1,7 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { withStyles, makeStyles } from '@material-ui/core/styles';
 import Slider from '@material-ui/core/Slider';
-
 
 const useStyles = makeStyles({
   root: {
@@ -28,7 +28,6 @@ const ActivitySlider = withStyles({
       boxShadow: '#ccc 0px 2px 3px 1px',
     },
     '& .bar': {
-      // display: inline-block !important;
       height: 9,
       width: 1,
       backgroundColor: 'currentColor',
@@ -59,7 +58,6 @@ function ActivitySliderThumbComponent(props) {
 function RangeSlider({ values, onChange}) {
   const classes = useStyles();
 
-  
   return (
     <div className={classes.root}>
       <ActivitySlider
@@ -75,6 +73,17 @@ function RangeSlider({ values, onChange}) {
       />
     </div>
   );
+}
+
+RangeSlider.propTypes = {
+  ThumbComponent: PropTypes.func.isRequired,
+  defaultValue: PropTypes.array.isRequired,
+  onChange: PropTypes.func.isRequired,
+  valueLabelDisplay: PropTypes.string,
+  marks: PropTypes.bool,
+  step: PropTypes.number,
+  max: PropTypes.number,
+  min: PropTypes.number
 }
 
 export default RangeSlider;
