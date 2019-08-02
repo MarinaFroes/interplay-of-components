@@ -2,7 +2,6 @@ import React from 'react';
 import './App.css';
 import MyResponsiveBar from './components/MyResponsiveBar';
 import styled from 'styled-components';
-// import { data } from './components/data';
 import RangeSlider from './components/RangeSlider';
 
 const Styles = styled.div`
@@ -16,20 +15,26 @@ const BarContainer = styled.div`
   width: 700px;
 `;
 
-const initialData = [194, 190, 172, 151, 134, 80];
+// TODO: Change hard-coded data
+const initialData = [194, 190, 172, 151, 134, 80, 34, 20];
 
-const initialDataObject = {
-  "activity 1": initialData[0],
-  "activity 2": initialData[1],
-  "activity 3": initialData[2],
-  "activity 4": initialData[3],
-  "activity 5": initialData[4],
-  "activity 6": initialData[5],
-}
+const initialDataObject = {};
+
+let sliderKeys;
+
+// Populating initialDataObject and sliderKeys variable
+(function (initialData) {
+  for (let i = 0; i < initialData.length; i++) {
+    initialDataObject[`activity ${i + 1}`] = initialData[i];
+  }
+  sliderKeys = Object.keys(initialDataObject);
+  return initialDataObject;
+})(initialData);
 
 function App() {
-  const [value, setValue] = React.useState([1, 6]);
-  // const [activityData, setActivityData] = React.useState(initialData);
+  const [sliderValue, setSliderValue] = React.useState([1, initialData.length]);
+  React.useEffect(() => { getData(initialData, sliderValue) }, [sliderValue]);
+
   const [dataObject, setDataObject] = React.useState(initialDataObject);
 
   const getData = (initialData, newValue) => {
@@ -51,18 +56,16 @@ function App() {
   }
 
   const handleChange = (event, newValue) => {
-    setValue(newValue);
+    setSliderValue(newValue);
     console.log(`value: ${newValue}`);
   };
   
-  React.useEffect(() => { getData(initialData, value) }, [value]);
-
   return (
     <Styles>
       <BarContainer className="App">
-        <MyResponsiveBar data={[dataObject]}/>
+        <MyResponsiveBar data={[dataObject]} keys={sliderKeys}/>
       </BarContainer>
-      <RangeSlider values={value} onChange={handleChange} />
+      <RangeSlider values={sliderValue} onChange={handleChange} max={initialData.length}/>
     </Styles>
   );
 }
