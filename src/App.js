@@ -16,7 +16,8 @@ const BarContainer = styled.div`
 `;
 
 // TODO: Change hard-coded data
-const initialData = [194, 190, 172, 151, 134, 80, 34, 20];
+const initialData = [84, 14, 234, 37, 64, 42, 197, 11];
+initialData.sort((a, b) => b - a);
 
 const initialDataObject = {};
 
