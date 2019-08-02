@@ -13,11 +13,18 @@ const MyResponsiveBar = ({ data, keys }) => (
     colors={{ scheme: 'set3' }}
     axisTop={null}
     axisRight={null}
-    axisBottom={null}
+    axisBottom={{
+      legend: 'activities',
+      legendPosition: 'middle',
+      legendOffset: 32
+    }}
     axisLeft={{
       tickSize: 5,
       tickPadding: 5,
-      tickRotation: 0
+      tickRotation: 0,
+      legend: 'occurrences',
+      legendPosition: 'middle',
+      legendOffset: -40
     }}
     isInteractive={false}
     labelSkipWidth={12}
