@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { withStyles, makeStyles } from '@material-ui/core/styles';
 import Slider from '@material-ui/core/Slider';
 
@@ -49,13 +48,30 @@ const ActivitySlider = withStyles({
   },
 })(Slider);
 
-function ActivitySliderThumbComponent(props) {
+function ActivitySliderThumbComponent(props: any) {
   return (
     <span {...props} />
   );
 }
+/*
+interface Props {
+  children: React.ReactElement;
+  open: boolean;
+  value: number;
+}
 
-function RangeSlider({ values, onChange, max}) {
+function ValueLabelComponent(props: Props) {
+  const { children, open, value } = props;
+*/
+
+interface Props {
+  values: array;
+  onChange: function;
+  max: number;
+}
+
+function RangeSlider(props: Props) {
+  const { values, onChange, max } = props;
   const classes = useStyles();
 
   return (
@@ -74,14 +90,21 @@ function RangeSlider({ values, onChange, max}) {
   );
 }
 
-RangeSlider.propTypes = {
-  ThumbComponent: PropTypes.func.isRequired,
-  defaultValue: PropTypes.array.isRequired,
-  onChange: PropTypes.func.isRequired,
-  valueLabelDisplay: PropTypes.string,
-  marks: PropTypes.bool,
-  max: PropTypes.number,
-  min: PropTypes.number
-}
+// RangeSlider.propTypes = {
+//   ThumbComponent: PropTypes.func.isRequired,
+//   defaultValue: PropTypes.array.isRequired,
+//   onChange: PropTypes.func.isRequired,
+//   valueLabelDisplay: PropTypes.string,
+//   marks: PropTypes.bool,
+//   max: PropTypes.number,
+//   min: PropTypes.number
+// }
+
+// interface ActivityProps {
+//     first_name: string;
+//     last_name: string;
+//     age: number;
+//     agreetoterms?: boolean;
+// }
 
 export default RangeSlider;
