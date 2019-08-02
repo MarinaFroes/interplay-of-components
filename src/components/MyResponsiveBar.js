@@ -2,16 +2,15 @@ import React from 'react';
 import { ResponsiveBar } from '@nivo/bar';
 import PropTypes from 'prop-types';
 
-const MyResponsiveBar = ({ data }) => (
+const MyResponsiveBar = ({ data, keys }) => (
   <ResponsiveBar
     data={data}
-    keys={['activity 1', 'activity 2', 'activity 3', 'activity 4', 'activity 5', 'activity 6']}
+    keys={keys}
     groupMode={'grouped'}
     margin={{ top: 50, right: 130, bottom: 50, left: 60 }}
     padding={0.1}
     innerPadding={30}
-    colors={{ scheme: 'nivo' }}
-    borderColor={{ from: 'color', modifiers: [['darker', 1.6]] }}
+    colors={{ scheme: 'set3' }}
     axisTop={null}
     axisRight={null}
     axisBottom={null}
@@ -23,7 +22,7 @@ const MyResponsiveBar = ({ data }) => (
     isInteractive={false}
     labelSkipWidth={12}
     labelSkipHeight={12}
-    labelTextColor={{ from: 'color', modifiers: [['darker', 1.6]] }}
+    labelTextColor={{ from: 'color', modifiers: [['darker', 2]] }}
     legends={[
       {
         dataFrom: 'keys',
@@ -46,7 +45,8 @@ const MyResponsiveBar = ({ data }) => (
 )
 
 MyResponsiveBar.propTypes = {
-  data: PropTypes.array.isRequired
+  data: PropTypes.array.isRequired,
+  keys: PropTypes.array.isRequired
 }
 
 export default MyResponsiveBar;
