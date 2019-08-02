@@ -1,6 +1,5 @@
 import React from 'react';
 import { ResponsiveBar } from '@nivo/bar';
-// import PropTypes from 'prop-types';
 
 interface BarProps {
   data: object[];
@@ -55,10 +54,5 @@ const MyResponsiveBar = ({ data, keys }: BarProps) => (
     motionDamping={15}
   />
 )
-
-// MyResponsiveBar.propTypes = {
-//   data: PropTypes.array.isRequired,
-//   keys: PropTypes.array.isRequired
-// }
 
 export default MyResponsiveBar;
