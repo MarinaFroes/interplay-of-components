@@ -1,8 +1,13 @@
 import React from 'react';
 import { ResponsiveBar } from '@nivo/bar';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
-const MyResponsiveBar = ({ data, keys }) => (
+interface BarProps {
+  data: object[];
+  keys: string[];
+}
+
+const MyResponsiveBar = ({ data, keys }: BarProps) => (
   <ResponsiveBar
     data={data}
     keys={keys}
@@ -51,9 +56,9 @@ const MyResponsiveBar = ({ data, keys }) => (
   />
 )
 
-MyResponsiveBar.propTypes = {
-  data: PropTypes.array.isRequired,
-  keys: PropTypes.array.isRequired
-}
+// MyResponsiveBar.propTypes = {
+//   data: PropTypes.array.isRequired,
+//   keys: PropTypes.array.isRequired
+// }
 
 export default MyResponsiveBar;
