@@ -56,28 +56,25 @@ function ActivitySliderThumbComponent(props) {
   );
 }
 
-export default function RangeSlider() {
+function RangeSlider({ values, onChange}) {
   const classes = useStyles();
-  const [value, setValue] = React.useState([10, 60]);
 
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-    console.log(newValue);
-  };
   
   return (
     <div className={classes.root}>
       <ActivitySlider
         ThumbComponent={ActivitySliderThumbComponent}
         aria-label="range-slider"
-        defaultValue={value}
-        onChange={handleChange}
+        defaultValue={values}
+        onChange={onChange}
         valueLabelDisplay="on"
         marks={true}
         step={1}
         max={6}
-        min={0}
+        min={1}
       />
     </div>
   );
 }
+
+export default RangeSlider;
