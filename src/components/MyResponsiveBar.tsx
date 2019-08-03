@@ -1,12 +1,12 @@
 import React from 'react';
 import { ResponsiveBar } from '@nivo/bar';
 
-interface BarProps {
+interface IBarProps {
   data: object[];
   keys: string[];
 }
 
-const MyResponsiveBar = ({ data, keys }: BarProps) => (
+const MyResponsiveBar = ({ data, keys }: IBarProps) => (
   <ResponsiveBar
     data={data}
     keys={keys}
