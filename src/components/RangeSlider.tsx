@@ -54,13 +54,13 @@ function ActivitySliderThumbComponent(props: any) {
   );
 }
 
-interface SliderProps {
+interface ISliderProps {
   values: number[];
   onChange: any;
   max: number;
 }
 
-function RangeSlider(props: SliderProps) {
+function RangeSlider(props: ISliderProps) {
   const { values, onChange, max } = props;
   const classes = useStyles();
 
