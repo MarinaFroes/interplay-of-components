@@ -16,15 +16,15 @@ const BarContainer = styled.div`
 `;
 
 // TODO: Change hard-coded data
-const initialData = [84, 14, 234, 37, 64, 42, 197, 11];
+const initialData: number[] = [84, 14, 234, 37, 64, 42, 197, 11];
 initialData.sort((a, b) => b - a);
 
-const initialDataObject: any = {};
+const initialDataObject: { [key: string]: number } = {};
 
 let sliderKeys: string[];
 
 // Populating initialDataObject and sliderKeys variable
-(function (initialData) {
+(function (initialData: number[]): object {
   for (let i = 0; i < initialData.length; i++) {
     initialDataObject[`activity ${i + 1}`] = initialData[i];
   }
@@ -32,16 +32,18 @@ let sliderKeys: string[];
   return initialDataObject;
 })(initialData);
 
-function App() {
-  const [sliderValue, setSliderValue] = React.useState([1, initialData.length]);
+type ChangeSlider = React.ChangeEvent<HTMLElement>;
+
+function App(): JSX.Element {
+  const [sliderValue, setSliderValue] = React.useState<number[]>([1, initialData.length]);
   React.useEffect(() => { getData(initialData, sliderValue) }, [sliderValue]);
 
-  const [dataObject, setDataObject] = React.useState(initialDataObject);
+  const [dataObject, setDataObject] = React.useState<object>(initialDataObject);
 
   const getData = (initialData: number[], newValue: number[]): void => {
     let newData: number[] = initialData.slice(newValue[0] - 1, newValue[1]);
     
-    const newObject: any = {};
+    const newObject: { [key: string]: number } = {};
 
     for (let i = 0; i < initialData.length; i++) {
       if (newData.includes(initialData[i])) {
@@ -55,7 +57,7 @@ function App() {
     setDataObject(newObject);
   }
 
-  const handleChange = (event: any, newValue: any) => {
+  const handleChange = (event: ChangeSlider, newValue: number[]): void => {
     setSliderValue(newValue);
   };
   
