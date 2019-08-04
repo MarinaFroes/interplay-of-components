@@ -1,6 +1,12 @@
 import { START_GRAPHS, UPDATE_GRAPHS } from '../actions/actionTypes';
 
-const initialState: object = {
+interface State {
+  activityOccurrences: number[];
+  sliderValue: number[];
+  dataObject: object;
+}
+
+const initialState: State = {
   activityOccurrences: [84, 14, 234, 37, 64, 42, 197, 11],
   sliderValue: [],
   dataObject: {}
