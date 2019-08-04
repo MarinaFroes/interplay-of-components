@@ -28,12 +28,14 @@ $ npm start
 ### Articles 
 - [Replacing Component Lifecycles with the useEffect Hook, in React](https://alligator.io/react/replacing-component-lifecycles-with-useeffect/)
 - [How to Use Typescript with React and Redux](https://medium.com/@rossbulat/how-to-use-typescript-with-react-and-redux-a118b1e02b76)
+- [Configuring Jest and Enzyme in Create React App on Typescript](https://thetrevorharmon.com/blog/configuring-jest-and-enzyme-in-create-react-app-on-typescript)
 
 ### Documentations
 - [MDN Web Docs](https://developer.mozilla.org/en-US/)
 - [W3 School](https://www.w3schools.com/)
 - [Redux](https://redux.js.org/)
 - [React](https://reactjs.org/)
+- [React-Redux](https://react-redux.js.org)
 - [Nivo](https://nivo.rocks/bar) 
 - [Material-UI ](https://material-ui.com/pt/components/slider/)
 - [Styled Components](https://www.styled-components.com/)
