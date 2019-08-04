@@ -1,6 +1,6 @@
-import { START_GRAPHS, UPDATE_GRAPHS } from './actionTypes';
+import { graphsActionsTypes, START_GRAPHS, UPDATE_GRAPHS } from './actionTypes';
 
-export function startGraphs(activityOccurrences: number[]): any {
+export function startGraphs(activityOccurrences: number[]): graphsActionsTypes {
   const newValue: number[] = [1, activityOccurrences.length];
   const newObject: { [key: string]: number } = {};
   activityOccurrences.sort((a, b) => b - a);
@@ -17,7 +17,7 @@ export function startGraphs(activityOccurrences: number[]): any {
   }
 }
 
-export function updateGraphs(activityOccurrences: number[], newValue: number[]): any {
+export function updateGraphs(activityOccurrences: number[], newValue: number[]): graphsActionsTypes {
   const newData: number[] = activityOccurrences.slice(newValue[0] - 1, newValue[1]);
   const newObject: { [key: string]: number } = {};
 
