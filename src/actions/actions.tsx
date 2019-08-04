@@ -1,4 +1,4 @@
-import { graphsActionsTypes, START_GRAPHS, UPDATE_GRAPHS } from './actionTypes';
+import { graphsActionsTypes, START_GRAPHS, UPDATE_GRAPHS } from './types';
 
 export function startGraphs(activityOccurrences: number[]): graphsActionsTypes {
   const newValue: number[] = [1, activityOccurrences.length];
