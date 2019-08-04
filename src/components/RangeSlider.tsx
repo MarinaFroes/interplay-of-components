@@ -76,7 +76,7 @@ function RangeSlider(): JSX.Element {
     } else {
       updateAction(activityOccurrences, sliderValue);
     }
-  }, [sliderValue, activityOccurrences, data]);
+  }, [sliderValue]);
 
   const handleChange = (event: any, newValue: any): void => {
     setSliderValue(newValue);
