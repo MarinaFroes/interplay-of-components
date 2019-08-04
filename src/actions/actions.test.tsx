@@ -1,5 +1,5 @@
 import { startGraphs, updateGraphs } from './actions';
-import { START_GRAPHS, UPDATE_GRAPHS } from './actionTypes';
+import { START_GRAPHS, UPDATE_GRAPHS } from './types';
 
 describe('actions', () => {
   it('should create an action to start graphs', () => {
