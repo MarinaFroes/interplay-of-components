@@ -1,10 +1,4 @@
-import { START_GRAPHS, UPDATE_GRAPHS } from '../actions/actionTypes';
-
-interface State {
-  activityOccurrences: number[];
-  sliderValue: number[];
-  dataObject: object;
-}
+import { graphsActionsTypes, State, START_GRAPHS, UPDATE_GRAPHS } from '../actions/types';
 
 const initialState: State = {
   activityOccurrences: [84, 14, 234, 37, 64, 42, 197, 11],
@@ -12,7 +6,7 @@ const initialState: State = {
   dataObject: {}
 }
 
-function rootReducer(state = initialState, action: any) {
+function rootReducer(state = initialState, action: graphsActionsTypes): State {
   switch (action.type) {
     case START_GRAPHS:
       return {
