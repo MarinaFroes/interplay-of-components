@@ -3,13 +3,12 @@ import { ResponsiveBar } from '@nivo/bar';
 
 interface IBarProps {
   data: object[];
-  keys: string[];
 }
 
-const MyResponsiveBar = ({ data, keys }: IBarProps) => (
+const MyResponsiveBar = ({ data }: IBarProps) => (
   <ResponsiveBar
     data={data}
-    keys={keys}
+    keys={Object.keys(data)}
     groupMode={'grouped'}
     margin={{ top: 50, right: 130, bottom: 50, left: 60 }}
     padding={0.1}
