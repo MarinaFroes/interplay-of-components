@@ -59,7 +59,7 @@ function ActivitySliderThumbComponent(props: any) {
 function RangeSlider(): JSX.Element {
   // GET STORE DATA
   const data: any = useSelector(state => state);
-  const activityOccurrences = data.activityOccurrences;
+  const activityOccurrences: number[] = data.activityOccurrences;
   
   // SET INITIAL STATE
   const [sliderValue, setSliderValue] = React.useState<number[]>([1, activityOccurrences.length]);
@@ -78,8 +78,8 @@ function RangeSlider(): JSX.Element {
     }
   }, [sliderValue]);
 
-  const handleChange = (event: any, newValue: any): void => {
-    setSliderValue(newValue);
+  const handleChange = (event: React.ChangeEvent<{}>, value: any): void => {
+    setSliderValue(value);
   };
   
   const classes = useStyles();

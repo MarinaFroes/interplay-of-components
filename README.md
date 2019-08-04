@@ -23,6 +23,7 @@ $ npm start
 
 ### Tutorials
 - [Redux Crash Course With React](https://www.youtube.com/watch?v=93p3LxR9xfM) by Traversy Media.
+- [React Redux with hooks](https://www.youtube.com/watch?v=_oK9Jd8LH1E) by Classsed.
 
 ### Articles 
 - [Replacing Component Lifecycles with the useEffect Hook, in React](https://alligator.io/react/replacing-component-lifecycles-with-useeffect/)
