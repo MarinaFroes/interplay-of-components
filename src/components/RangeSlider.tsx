@@ -67,7 +67,7 @@ function RangeSlider(): JSX.Element {
   // ACTIONS
   const dispatch = useDispatch();
   const startAction = (activityOccurrences: any) => dispatch(startGraphs(activityOccurrences));
-  const updateAction = (activityOccurrences: any, newValue: any) => dispatch(updateGraphs(activityOccurrences, newValue));
+  const updateAction = (activityOccurrences: any, newSliderValue: any) => dispatch(updateGraphs(activityOccurrences, newSliderValue));
 
   // useEffect - combines componentDidMount() and componentDidUpdate()
   React.useEffect(() => {

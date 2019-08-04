@@ -20,7 +20,7 @@ describe('actions', () => {
 
   it('should create an action to update graphs', () => {
     const activityOccurrences = [20, 10, 5];
-    const newValue = [1, 2];
+    const newSliderValue = [1, 2];
     const expectedAction = {
       type: UPDATE_GRAPHS,
       payload: {
@@ -32,6 +32,6 @@ describe('actions', () => {
         }
       }
     }
-    expect(updateGraphs(activityOccurrences, newValue)).toEqual(expectedAction);
+    expect(updateGraphs(activityOccurrences, newSliderValue)).toEqual(expectedAction);
   })
 })
