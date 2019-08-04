@@ -2,9 +2,8 @@ import React from 'react';
 import { ResponsiveBar } from '@nivo/bar';
 import { useSelector } from 'react-redux';
 
-function MyResponsiveBar() {
+function MyResponsiveBar(): JSX.Element {
   const data: any = useSelector(state => state);
-  console.log(data);
 
   return (
     <ResponsiveBar

@@ -57,36 +57,26 @@ function ActivitySliderThumbComponent(props: any) {
   );
 }
 
-function RangeSlider() {
+function RangeSlider(): JSX.Element {
   // GET STORE DATA
   const data: any = useSelector(state => state);
-
   const activityOccurrences = data.activityOccurrences;
-
   const storedDataObject = data.dataObject;
-
   const storedSliderValue = data.sliderValue;
   
   // SET INITIAL STATE
   const [sliderValue, setSliderValue] = React.useState<number[]>([1, activityOccurrences.length]);
 
-  // // ACTIONS
+  // ACTIONS
   const dispatch = useDispatch();
   const startAction = (activityOccurrences: any) => dispatch(startGraphs(activityOccurrences));
   const updateAction = (activityOccurrences: any, newValue: any) => dispatch(updateGraphs(activityOccurrences, newValue));
 
+  // useEffect - combines componentDidMount() and componentDidUpdate()
   React.useEffect(() => {
-    console.log('useEffect called');
-    console.log(storedSliderValue.length);
-    console.log(Object.keys(storedDataObject).length);
-    console.log(activityOccurrences);
-    // || Object.keys(storedDataObject).length === 0
     if (storedSliderValue.length === 0 || Object.keys(storedDataObject).length === 0) {
-      console.log('call start action');
       startAction(activityOccurrences);
-      console.log(`store: ${store.getState().sliderValue}`);
     } else {
-      console.log('call update action');
       updateAction(activityOccurrences, sliderValue);
     }
   }, [sliderValue]);
