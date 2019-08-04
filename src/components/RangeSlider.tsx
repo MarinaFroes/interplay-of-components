@@ -3,7 +3,6 @@ import { withStyles, makeStyles } from '@material-ui/core/styles';
 import Slider from '@material-ui/core/Slider';
 import { useSelector, useDispatch } from 'react-redux';
 import { startGraphs, updateGraphs } from '../actions/actions';
-import { store } from './store';
 
 const useStyles = makeStyles({
   root: {
@@ -61,8 +60,6 @@ function RangeSlider(): JSX.Element {
   // GET STORE DATA
   const data: any = useSelector(state => state);
   const activityOccurrences = data.activityOccurrences;
-  const storedDataObject = data.dataObject;
-  const storedSliderValue = data.sliderValue;
   
   // SET INITIAL STATE
   const [sliderValue, setSliderValue] = React.useState<number[]>([1, activityOccurrences.length]);
@@ -74,12 +71,12 @@ function RangeSlider(): JSX.Element {
 
   // useEffect - combines componentDidMount() and componentDidUpdate()
   React.useEffect(() => {
-    if (storedSliderValue.length === 0 || Object.keys(storedDataObject).length === 0) {
+    if (sliderValue.length === 0 || Object.keys(data.dataObject).length === 0) {
       startAction(activityOccurrences);
     } else {
       updateAction(activityOccurrences, sliderValue);
     }
-  }, [sliderValue]);
+  }, [sliderValue, activityOccurrences, data]);
 
   const handleChange = (event: any, newValue: any): void => {
     setSliderValue(newValue);
