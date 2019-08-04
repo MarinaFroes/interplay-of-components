@@ -18,3 +18,9 @@ interface updateGraphsAction {
 }
 
 export type graphsActionsTypes = startGraphsAction | updateGraphsAction;
+
+export interface State {
+  activityOccurrences: number[];
+  sliderValue: number[];
+  dataObject: object;
+}
