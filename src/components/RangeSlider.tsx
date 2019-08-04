@@ -1,6 +1,9 @@
 import React from 'react';
 import { withStyles, makeStyles } from '@material-ui/core/styles';
 import Slider from '@material-ui/core/Slider';
+import { useSelector, useDispatch } from 'react-redux';
+import { startGraphs, updateGraphs } from '../actions/actions';
+import { store } from './store';
 
 const useStyles = makeStyles({
   root: {
@@ -54,14 +57,44 @@ function ActivitySliderThumbComponent(props: any) {
   );
 }
 
-interface ISliderProps {
-  values: number[];
-  onChange: any;
-  max: number;
-}
+function RangeSlider() {
+  // GET STORE DATA
+  const data: any = useSelector(state => state);
 
-function RangeSlider(props: ISliderProps) {
-  const { values, onChange, max } = props;
+  const activityOccurrences = data.activityOccurrences;
+
+  const storedDataObject = data.dataObject;
+
+  const storedSliderValue = data.sliderValue;
+  
+  // SET INITIAL STATE
+  const [sliderValue, setSliderValue] = React.useState<number[]>([1, activityOccurrences.length]);
+
+  // // ACTIONS
+  const dispatch = useDispatch();
+  const startAction = (activityOccurrences: any) => dispatch(startGraphs(activityOccurrences));
+  const updateAction = (activityOccurrences: any, newValue: any) => dispatch(updateGraphs(activityOccurrences, newValue));
+
+  React.useEffect(() => {
+    console.log('useEffect called');
+    console.log(storedSliderValue.length);
+    console.log(Object.keys(storedDataObject).length);
+    console.log(activityOccurrences);
+    // || Object.keys(storedDataObject).length === 0
+    if (storedSliderValue.length === 0 || Object.keys(storedDataObject).length === 0) {
+      console.log('call start action');
+      startAction(activityOccurrences);
+      console.log(`store: ${store.getState().sliderValue}`);
+    } else {
+      console.log('call update action');
+      updateAction(activityOccurrences, sliderValue);
+    }
+  }, [sliderValue]);
+
+  const handleChange = (event: any, newValue: any): void => {
+    setSliderValue(newValue);
+  };
+  
   const classes = useStyles();
 
   return (
@@ -69,11 +102,11 @@ function RangeSlider(props: ISliderProps) {
       <ActivitySlider
         ThumbComponent={ActivitySliderThumbComponent}
         aria-label="range-slider"
-        defaultValue={values}
-        onChange={onChange}
+        defaultValue={sliderValue}
+        onChange={handleChange}
         valueLabelDisplay="on"
         marks={true}
-        max={max}
+        max={activityOccurrences.length}
         min={1}
       />
     </div>
