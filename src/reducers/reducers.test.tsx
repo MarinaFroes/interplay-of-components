@@ -1,15 +1,8 @@
 import rootReducer from './reducers';
-import { START_GRAPHS, UPDATE_GRAPHS } from '../actions/actionTypes';
+import { START_GRAPHS, UPDATE_GRAPHS } from '../actions/types';
 
 describe('root reducer', () => {
-  it('should return the initial state', () => {
-    expect(rootReducer(undefined, {})).toEqual({
-      activityOccurrences: [84, 14, 234, 37, 64, 42, 197, 11],
-      sliderValue: [],
-      dataObject: {}
-    })
-  })
-
+ 
   it('should handle graphs start', () => {
     expect(
       rootReducer({
