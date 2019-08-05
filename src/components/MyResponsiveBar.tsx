@@ -12,7 +12,7 @@ function MyResponsiveBar(): JSX.Element {
       groupMode={'grouped'}
       margin={{ top: 50, right: 130, bottom: 50, left: 60 }}
       padding={0.1}
-      innerPadding={30}
+      innerPadding={20}
       colors={{ scheme: 'set3' }}
       axisTop={null}
       axisRight={null}
