@@ -11,13 +11,20 @@ const Styles = styled.div`
 `;
 
 const BarContainer = styled.div`
-  height: 500px;
-  width: 700px;
+  width: 60vw;
+  max-width: 700px;
+  height: 50vh;
+`;
+
+const Heading = styled.h1`
+  font-size: 1rem;
+  margin-top: 2rem;
 `;
 
 function App(): JSX.Element {
   return (
     <Styles>
+      <Heading>Activities x Occurrences</Heading>
       <BarContainer className="App">
         <MyResponsiveBar />
       </BarContainer>
